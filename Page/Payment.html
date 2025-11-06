@@ -15,7 +15,11 @@
 
         <aside id="sidebar"
             class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
-            <a href="#"><img src="/images/logoBank.png" alt="logoBank" class="mb-6"></a>
+
+            <a href="#" class="flex items-center justify-center">
+                <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto">
+            </a>
+
 
             <ul class="flex-1 space-y-6">
                 <li>
@@ -33,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href=""
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
                         <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5">
                         <span>Payments</span>
@@ -50,12 +54,10 @@
 
             <div class="mt-auto relative">
                 <div class="flex items-center gap-3">
-                    <img src="/images/imagePersonnale.jpg" alt="User"
-                        class="w-10 h-10 rounded-full border-2 border-blue-500">
                     <div class="relative w-full">
                         <button id="dropdownBtn"
                             class="w-full text-white font-medium flex items-center gap-1 focus:outline-none">
-                            Lahmar Zakariae
+                            Mehdi Cherkaoui
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-[2px]" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -87,8 +89,7 @@
         <div class="flex-1 flex flex-col ">
 
 
-            <header
-                class="bg-white border-b border-gray-200 shadow p-4 flex justify-between items-center">
+            <header class="bg-white border-b border-gray-200 shadow p-4 flex justify-between items-center">
 
                 <button id="sidebarToggle" class="md:hidden focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
@@ -98,7 +99,7 @@
                     </svg>
                 </button>
 
-                <h1 class="text-xl font-semibold text-black">Accueil</h1>
+                <h1 class="text-xl font-semibold text-black">Payments</h1>
 
 
                 <div class="relative">
@@ -132,9 +133,58 @@
                 </div>
             </header>
 
-            <main class="p-6 flex-1 overflow-auto">
-                <h1 class="text-2xl font-semibold">Bonjour Mr: Lahmar Zakariae</h1>
+            <main class="p-10 flex-1 overflow-auto">
+                <h1 class="text-4xl font-semibold mb-10 text-left">Payer Une Facture</h1>
+
+                <section class="w-full max-w-3xl mx-auto">
+                    <div class="flex flex-col ">
+
+                        <div class="flex flex-col gap-8">
+                            <div class="flex flex-col gap-2">
+                            <span class="font-medium ml-2">Compte source</span>
+
+                            <div class="relative">
+
+                                <span class="absolute right-6 top-4 pointer-events-none">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+
+                                <select class="appearance-none w-full border border-gray-300 rounded-md p-3 pl-10 
+                                focus:outline-none focus:ring-2 focus:ring-blue-950">
+                                    <option></option>
+                                    <option>inwi</option>
+                                    <option>orange</option>
+                                    <option>Maroc-Telecom</option>
+                                    <option>electricity & water</option>
+                                    <option>internet</option>
+                                </select>
+                            </div></div>
+
+
+                            <div class="flex flex-col gap-2">
+                                <span class="font-medium ml-2">Reference</span>
+                                <input type="number"
+                                    class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-950">
+                            </div>
+
+                            <span class="mt-2 ml-8">Plafond : 10 000 MAD/transaction</span>
+
+                            <div class="flex justify-end">
+                                <button
+                                    class="bg-[#13233A] text-white px-10 py-3 rounded-xl hover:bg-[#0c192e] transition">
+                                    Valider
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
             </main>
+
+
         </div>
     </div>
 
