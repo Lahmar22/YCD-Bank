@@ -2,51 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <title>YCD Bank | Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>YCD Bank | Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-
     <div class="flex h-screen">
-
         <aside id="sidebar"
             class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
-
             <a href="#" class="flex items-center justify-center">
-                <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto">
+                <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto" />
             </a>
-
 
             <ul class="flex-1 space-y-6">
                 <li>
                     <a href="/pages/home.html"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5">
+                        <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5" />
                         <span>Accueil</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5">
+                        <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5" />
                         <span>Virement</span>
                     </a>
                 </li>
                 <li>
-                    <a href=""
-                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5">
+                    <a href="" class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5" />
                         <span>Payments</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5">
+                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5" />
                         <span>Currency Converter</span>
                     </a>
                 </li>
@@ -67,16 +62,19 @@
 
                         <ul id="dropdownMenu"
                             class="absolute left-0 bottom-full mb-2 w-44 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hidden z-50">
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Parameter</a>
                             </li>
                             <li>
-                                <hr class="border-gray-200 dark:border-gray-700 my-1">
+                                <hr class="border-gray-200 dark:border-gray-700 my-1" />
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Deconnexion</a>
                             </li>
                         </ul>
@@ -85,12 +83,8 @@
             </div>
         </aside>
 
-
-        <div class="flex-1 flex flex-col ">
-
-
+        <div class="flex-1 flex flex-col">
             <header class="bg-white border-b border-gray-200 shadow p-4 flex justify-between items-center">
-
                 <button id="sidebarToggle" class="md:hidden focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -100,7 +94,6 @@
                 </button>
 
                 <h1 class="text-xl font-semibold text-black">Payments</h1>
-
 
                 <div class="relative">
                     <button id="notifBtn">
@@ -119,7 +112,7 @@
                             Notifications
                         </div>
                         <ul class="space-y-2 p-2">
-                            <li class="bg-gray-100  p-3 rounded">
+                            <li class="bg-gray-100 p-3 rounded">
                                 <p>Virement recu de Youcode d'un montant de 1000 Dh</p>
                             </li>
                             <li class="bg-gray-100 p-3 rounded">
@@ -134,40 +127,40 @@
             </header>
 
             <main class="p-10 flex-1 overflow-auto">
-                <h1 class="text-4xl font-semibold mb-10 text-left">Payer Une Facture</h1>
+                <h1 class="text-4xl font-semibold mb-10 text-left">
+                    Payer Une Facture
+                </h1>
 
                 <section class="w-full max-w-3xl mx-auto">
-                    <div class="flex flex-col ">
-
+                    <div class="flex flex-col">
                         <div class="flex flex-col gap-8">
                             <div class="flex flex-col gap-2">
-                            <span class="font-medium ml-2">Compte source</span>
+                                <span class="font-medium ml-2">Compte source</span>
 
-                            <div class="relative">
+                                <div class="relative">
+                                    <span class="absolute right-6 top-4 pointer-events-none">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black"
+                                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
 
-                                <span class="absolute right-6 top-4 pointer-events-none">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </span>
-
-                                <select class="appearance-none w-full border border-gray-300 rounded-md p-3 pl-10 
-                                focus:outline-none focus:ring-2 focus:ring-blue-950">
-                                    <option></option>
-                                    <option>inwi</option>
-                                    <option>orange</option>
-                                    <option>Maroc-Telecom</option>
-                                    <option>electricity & water</option>
-                                    <option>internet</option>
-                                </select>
-                            </div></div>
-
+                                    <select
+                                        class="appearance-none w-full border border-gray-300 rounded-md p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-950">
+                                        <option></option>
+                                        <option>inwi</option>
+                                        <option>orange</option>
+                                        <option>Maroc-Telecom</option>
+                                        <option>electricity & water</option>
+                                        <option>internet</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="flex flex-col gap-2">
                                 <span class="font-medium ml-2">Reference</span>
                                 <input type="number"
-                                    class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-950">
+                                    class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                             </div>
 
                             <span class="mt-2 ml-8">Plafond : 10 000 MAD/transaction</span>
@@ -178,16 +171,12 @@
                                     Valider
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </section>
             </main>
-
-
         </div>
     </div>
-
 
     <script type="module" src="/js/main.js"></script>
 </body>
