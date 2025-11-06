@@ -1,20 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>YCD Bank | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <div class="flex">
-        <aside id="dashboard">
+        <aside class="aside w-64 text-white h-screen p-5">
+            <a href="#"><img src="/images/logoBank.png" alt="logoBank"></a>
 
+            <ul class="space-y-6 mt-6 border-t border-gray-700">
+
+                <li>
+                    <a href="/pages/home.html"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5">
+                        <span>Accueil</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5">
+                        <span>Virement</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5">
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5">
+                        <span>Currency Converter</span>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="mt-[460px] border-t border-gray-700 pt-4 relative">
+                <div class="flex items-center gap-3">
+                    <img src="/images/imagePersonnale.jpg" alt="User"
+                        class="w-10 h-10 rounded-full border-2 border-blue-500">
+
+                    <div class="relative">
+                        <button id="dropdownBtn"
+                            class="text-white font-medium flex items-center gap-1 focus:outline-none">
+                            Lahmar Zakariae
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-[2px]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <ul id="dropdownMenu"
+                            class="absolute left-0 bottom-full mb-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg hidden z-50">
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Parameter</a></li>
+                            <li>
+                                <hr class="border-gray-200 my-1">
+                            </li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Deconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </aside>
         <main>
-             <h1>Bonjour Mr: Lahmar Zakariae</h1>
+            <h1>Bonjour Mr: Lahmar Zakariae</h1>
         </main>
     </div>
-    <script src="/js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
+
 </html>

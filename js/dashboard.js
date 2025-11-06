@@ -1,10 +1,21 @@
-document.getElementById("userBtn").addEventListener("click", () => {
-    document.getElementById("dropdownMenu").classList.toggle("hidden");
-});
+export function dashboardMenu() {
+    const btn = document.getElementById("dropdownBtn");
+    const menu = document.getElementById("dropdownMenu");
 
-// Fermer si on clique ailleurs
-document.addEventListener("click", function(e) {
-    if (!document.getElementById("userMenu").contains(e.target)) {
-        document.getElementById("dropdownMenu").classList.add("hidden");
+    
+    if (!btn || !menu) {
+        console.warn("Dropdown elements not found (check IDs: dropdownBtn, dropdownMenu)");
+        return;
     }
-});
+
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.add("hidden");
+        }
+    });
+}
