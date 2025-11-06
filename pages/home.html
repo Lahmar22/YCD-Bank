@@ -136,70 +136,110 @@
             <main class="p-6 flex-1 overflow-auto">
 
                 <h1 class="text-2xl font-semibold">Bonjour Mr: Lahmar Zakariae</h1>
-                <div class="flex gap-20 p-12 pl-[150px] pr-[150px] ">
-                    <div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-light">Compte Cheque</p>
-                            <span class="text-lg font-semibold tracking-widest">VISA</span>
-                        </div>
+                <div
+                    class="flex justify-center items-center gap-20 px-6 py-12 md:px-[150px] overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
 
-
-                        <div class="flex mt-6">
-                            <p class="text-lg font-light">Compte n° :</p>
-                            <p class="text-lg tracking-wide">4643642343453</p>
-                        </div>
-
-
-                        <div class="mt-4 flex flex-col items-center">
-                            <p id="money1" class="text-lg text-green-600 tracking-widest">****</p>
-                            <button id="btnVisible" class="mt-1 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" green-600
-                                    class="h-6 w-6 text-gray-300 hover:text-white transition" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </button>
-                        </div>
-
+                    <div class="grid gap-10">
                         <div
-                            class="absolute inset-0 bg-gradient-to-tr from-gray-900/20 to-transparent pointer-events-none rounded-2xl">
+                            class="min-w-[300px] md:min-w-[400px] h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden snap-center">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-light">Compte Chèque</p>
+                                <span class="text-lg font-semibold tracking-widest">VISA</span>
+                            </div>
+
+                            <div class="flex mt-6">
+                                <p class="text-lg font-light">Compte n° :</p>
+                                <p class="text-lg tracking-wide">4643642343453</p>
+                            </div>
+
+                            <div class="mt-4 flex flex-col items-center">
+                                <p id="money1" class="text-lg text-green-600 tracking-widest">****</p>
+                                <button id="btnVisible" class="mt-1 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6 text-gray-300 hover:text-white transition" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid p-6 gap-3 border border-black rounded-xl">
+                            <div class="text-black font-semibold text-center">
+                                <h3>Operation</h3>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-light">Compte sur Carnet</p>
-                            <span class="text-lg font-semibold tracking-widest">VISA</span>
+
+                    <!-- Card 2 -->
+                    <div class="grid gap-10">
+                        <div class="min-w-[300px] md:min-w-[400px] h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden snap-center">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-light">Compte sur Carnet</p>
+                                <span class="text-lg font-semibold tracking-widest">VISA</span>
+                            </div>
+
+                            <div class="flex mt-6">
+                                <p class="text-lg font-light">Compte n° :</p>
+                                <p class="text-lg tracking-wide">787684684684</p>
+                            </div>
+
+                            <div class="mt-4 flex flex-col items-center">
+                                <p id="money2" class="text-lg text-green-600 tracking-widest">****</p>
+                                <button id="btnVisible2" class="mt-1 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6 text-gray-300 hover:text-white transition" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
+                        <div class="grid p-6 gap-3 border border-black rounded-xl">
+                            <div class="text-black font-semibold text-center">
+                                <h3>Operation</h3>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
+                            <div class="flex gap-2 w-full h-full border border-black rounded-xl">
+                                <p>Virement Youcode</p>
+                                <p>+1000 MAD</p>
+                                <p>6/11/2025</p>
+                            </div>
 
-
-                        <div class="flex mt-6">
-                            <p class="text-lg font-light">Compte n° :</p>
-                            <p class="text-lg tracking-wide">787684684684</p>
-                        </div>
-
-
-                        <div class="mt-4 flex flex-col items-center">
-                            <p id="money2" class="text-lg text-green-600 tracking-widest">****</p>
-                            <button id="btnVisible2" class="mt-1 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" green-600
-                                    class="h-6 w-6 text-gray-300 hover:text-white transition" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tr from-gray-900/20 to-transparent pointer-events-none rounded-2xl">
                         </div>
                     </div>
                 </div>
+
             </main>
         </div>
     </div>
