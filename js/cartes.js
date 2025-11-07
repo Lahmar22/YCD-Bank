@@ -19,5 +19,35 @@ export function visibleMoney2() {
     });
 }
 
+export function afficherPlus1() {
+    const button1 = document.getElementById("afficherPlus1");
+    const virements1 = document.querySelectorAll("#virementsContainer1 .virement1");
+
+    button1.addEventListener("click", () => {
+        let hiddenItems1 = Array.from(virements1).filter(v => v.classList.contains("hidden"));
+        hiddenItems1.slice(0, 4).forEach(v => v.classList.remove("hidden"));
+
+
+        if (Array.from(virements1).every(v => !v.classList.contains("hidden"))) {
+            button1.style.display = "none";
+        }
+    });
+}
+
+export function afficherPlus2() {
+    const button2 = document.getElementById("afficherPlus2");
+    const virements2 = document.querySelectorAll("#virementsContainer2 .virement2");
+
+    button2.addEventListener("click", () => {
+        let hiddenItems2 = Array.from(virements2).filter(v => v.classList.contains("hidden"));
+        hiddenItems2.slice(0, 4).forEach(v => v.classList.remove("hidden"));
+
+
+        if (Array.from(virements2).every(v => !v.classList.contains("hidden"))) {
+            button2.style.display = "none";
+        }
+    });
+}
+
 
 
