@@ -6,6 +6,7 @@ import { visibleMoney2 } from './cartes.js';
 import { afficherPlus1 } from './cartes.js';
 import { afficherPlus2 } from './cartes.js';
 
+
 dashboardMenu();
 headerMenu();
 sidebar();
@@ -13,6 +14,4 @@ visibleMoney();
 visibleMoney2()
 afficherPlus1();
 afficherPlus2();
-
-
 

@@ -1,7 +1,18 @@
-.aside{
+#sidebar {
     background: #1B2F45;
 }
 
-#notifMenu{
+#notifMenu {
     background: #1B2F45;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
