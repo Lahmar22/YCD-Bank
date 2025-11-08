@@ -134,7 +134,7 @@
                 <div class="w-full max-w-5xl mx-auto space-y-6">
                     <div>
                         <label class="block text-lg font-semibold mb-2">Montant</label>
-                        <input type="number"
+                        <input type="number" id="amount" placeholder="Montant en MAD" min="1"
                             class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
@@ -146,27 +146,25 @@
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span>
-                        <select
+                        <select id="currency"
                             class="appearance-none w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950">
-                            <option value=""></option>
-                            <option value="">US Dollar (USD)</option>
-                            <option value="">Euro (EUR)</option>
-                            <option value="">British Pound (GBP)</option>
-                            <option value="">Japanese Yen (JPY)</option>
+                            <option value="USD">USD - Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Livre</option>
+                            <option value="JPY">JPY - Yen</option>
+                            <option value="CAD">CAD - Dollar canadien</option>
                         </select>
                     </div>
 
-
-
                     <div>
-                        <label class="block text-lg font-semibold mb-2">Resultat</label>
-                        <input type="text" placeholder="" disabled
-                            class="w-full cursor-not-allowed  border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
+                        <label class="block text-lg font-semibold mb-2">Résultat</label>
+                        <input id="result" type="text" readonly
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
                     <div class="pt-4 flex justify-end">
-                        <button type="submit"
-                            class="bg-blue-950 hover:bg-[#010042] text-white font-semibold py-2 px-10 rounded-xl ">
+                        <button id="convertBtn"
+                            class="bg-blue-950 hover:bg-[#010042] text-white font-semibold py-2 px-10 rounded-xl">
                             Convert
                         </button>
                     </div>
@@ -175,7 +173,7 @@
 
         </div>
     </div>
-
+    <script src="/js/convert.js"></script>
     <script type="module" src="/js/main.js"></script>
 </body>
 
