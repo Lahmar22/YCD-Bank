@@ -22,7 +22,7 @@ document.getElementById("convertBtn").addEventListener("click", async () => {
         const converted = (amount * rateMADToTarget).toFixed(2);
         resultInput.value = `${converted} ${toCurrency}`;
     } catch (error) {
-        resultInput.value = "❌ Erreur de conversion";
+        resultInput.value = "Erreur de conversion";
         console.error("Erreur API :", error);
     }
 });
