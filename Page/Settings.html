@@ -131,34 +131,34 @@
                 <div class="w-full max-w-5xl mx-auto space-y-6">
                     <div>
                         <label class="block text-lg font-bold mb-2">Name</label>
-                        <input type="text" placeholder="name"
+                        <input type="text" placeholder="nom" id="SettingUserNom"
                             class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
                     <div>
-                        <label class="block text-lg font-bold mb-2">Age</label>
-                        <input type="number" placeholder="Age"
+
+                        <input type="text" placeholder="prenom" id="SettingUserPrenom"
                             class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
                     <div>
                         <label class="block text-lg font-bold mb-2">Password</label>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="password" placeholder="New Password"
+                            <input type="password" placeholder="New Password" id="SettingsUserPassword"
                                 class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
-                            <input type="password" placeholder="Confirm new password"
+                            <input type="password" placeholder="Confirm new password" id="SettingsUserPasswordConfirmation"
                                 class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-lg font-bold mb-2">Email</label>
-                        <input type="email" placeholder="Email"
+                        <input type="email" placeholder="Email" id="SettingsUserEmail"
                             class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
                     <div class="pt-4 flex justify-end">
-                        <button type="submit"
+                        <button type="submit" id="SettingSaveBtn"
                             class="bg-blue-950 hover:bg-[#010042] text-white font-semibold py-2 px-10 rounded-xl">
                             Save
                         </button>
@@ -169,6 +169,7 @@
     </div>
 
     <script type="module" src="/js/main.js"></script>
+    <script src="/js/settings.js"></script>
 </body>
 
 </html>
