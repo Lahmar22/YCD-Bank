@@ -145,28 +145,50 @@
                                         </svg>
                                     </span>
 
-                                    <select
+                                    <select id="select_which"
                                         class="appearance-none w-full border border-gray-300 rounded-md p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-950">
                                         <option></option>
-                                        <option>inwi</option>
-                                        <option>orange</option>
-                                        <option>Maroc-Telecom</option>
-                                        <option>electricity & water</option>
-                                        <option>internet</option>
+                                        <option value="inwi">inwi</option>
+                                        <option value="orange">orange</option>
+                                        <option value="maroc-telecom">Maroc-Telecom</option>
+                                        <option value="electricity-water">electricity & water</option>
+                                        <option value="internet">internet</option>
                                     </select>
                                 </div>
                             </div>
 
+                            <div class="flex flex-col gap-2 hidden" id="users_payment">
+                                <span class="font-medium ml-2">Compte source</span>
+
+                                <div class="relative">
+                                    <span class="absolute right-6 top-4 pointer-events-none">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black"
+                                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+
+                                    <select id="user_inside"
+                                        class=" appearance-none w-full border border-gray-300 rounded-md p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-950">
+                                        <option></option>
+                                        <option id="Number_user_1">Mehdi Cherkaoui - 0602334627</option>
+                                        <option id="Number_user_2">Mariam Ezraidi - 0643178475</option>
+                                        <option id="Number_user_3">Zakariae Lahmar - 0642369874</option>
+                                        <option id="Number_user_4">Abdellah Lemtiri - 0623587965</option>
+                                        <option id="Number_user_5">Ismail Lakroune - 0610035068</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="flex flex-col gap-2">
                                 <span class="font-medium ml-2">Reference</span>
-                                <input type="number"
+                                <input type="number" id="Reference"
                                     class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                             </div>
 
                             <span class="mt-2 ml-8">Plafond : 10 000 MAD/transaction</span>
 
                             <div class="flex justify-end">
-                                <button
+                                <button id="validatePayment"
                                     class="bg-[#13233A] text-white px-10 py-3 rounded-xl hover:bg-[#0c192e] transition">
                                     Valider
                                 </button>
@@ -178,7 +200,7 @@
         </div>
     </div>
 
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/app.js"></script>
 </body>
 
 </html>
