@@ -29,6 +29,24 @@ function generateBankID() {
         transfer: Number(transfer)
     };
 }
+function generateBankID2() {
+    let fullID = "500001";
+
+
+    for (let i = 0; i < 16; i++) {
+        fullID += Math.floor(Math.random() * 10);
+    }
+
+    fullID += "16";
+
+
+    const transfer = fullID.slice(6, 12);
+
+    return {
+        fullID2: fullID,
+        transfer2: Number(transfer)
+    };
+}
 
 
 function validatePasswordLength(password) {
@@ -74,9 +92,12 @@ document.getElementById("confirm-btn").addEventListener("click", function () {
         return;
     }
     const idData = generateBankID();
+    const idData_2 = generateBankID2();
     const user = {
-        id: idData.fullID,
-        transfer: idData.transfer,
+        id_1: idData.fullID,
+        transfer_1: idData.transfer,
+        id_2: idData_2.fullID2,
+        transfer_2: idData_2.transfer2,
         prenom,
         nom,
         email,
