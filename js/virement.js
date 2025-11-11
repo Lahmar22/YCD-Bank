@@ -27,3 +27,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault(); 
   alert("✅ Virement validé avec succès !");
 });
+<script>
+ 
+  const dateInput = document.getElementById('dateInput');
+  const today = new Date().toISOString().split('T')[0]; 
+  dateInput.value = today;
+</script>
