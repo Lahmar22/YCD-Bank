@@ -21,7 +21,7 @@ submitbtn_edit.addEventListener("click", () => {
     const newNumber = document.getElementById("newNumber").value;
 
     let numbers = JSON.parse(localStorage.getItem("numbers")) || [];
-    
+
     for (let i = 0; i < numbers.length; i++) {
         if (newNumber == numbers[i]) {
             alert("this number already exist");

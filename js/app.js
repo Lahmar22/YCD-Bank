@@ -3,6 +3,8 @@ const users_payment = document.getElementById("users_payment");
 const Reference = document.getElementById("Reference");
 const validatePayment = document.getElementById("validatePayment");
 const user_inside = document.getElementById("user_inside");
+
+
 select.addEventListener("change", function () {
     const selectedValue = this.value;
     if (selectedValue === "inwi" || selectedValue === "maroc-telecom" || selectedValue === "orange") {
@@ -34,6 +36,21 @@ validatePayment.addEventListener("click", () => {
         alert("You can't do more than 10,000 dhs");
         return;
     }
+
+    const select_value = select.value;
+
+
+    const paymentInfo = {
+        Reference_value,
+        select_value,
+    };
+
+
+    let Infos = JSON.parse(localStorage.getItem("Infos")) || [];
+    Infos.push(paymentInfo);
+    localStorage.setItem("Infos", JSON.stringify(Infos));
+
+
 
     alert("Payment accepted");
     select.value = "";
