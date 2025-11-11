@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="/styles/style.css" />
     <title>YCD Bank | Settings</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body>
+<body class="body">
     <div class="flex h-screen">
         <aside id="sidebar"
             class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
@@ -127,7 +128,7 @@
                 </div>
             </header>
 
-            <main class="flex-1 overflow-auto bg-white p-10">
+            <main class="flex-1 overflow-auto bg-white p-10" id="PDFContent">
                 <h1 class="text-3xl font-semibold h-20">Mon RIB</h1>
                 <div class="w-full max-w-5xl mx-auto space-y-6">
                     <div>
@@ -138,7 +139,7 @@
 
                     <div>
                         <label class="block text-lg font-bold mb-2">Bank</label>
-                        <input type="text" placeholder="YCD Bank" disabled
+                        <input type="text" value="YCD Bank" disabled
                             class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-950" />
                     </div>
 
@@ -167,8 +168,10 @@
         </div>
     </div>
 
-    <script type="module" src="/js/main.js"></script>
-    <script src="/js/pdf.js"></script>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script type="module" src="/js/main.js"></script>
+<script src="/js/pdf.js"></script>
 
 </html>
