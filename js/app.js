@@ -16,21 +16,22 @@ select.addEventListener("change", function () {
 });
 
 validatePayment.addEventListener("click", () => {
-    if (!select.value) {
-        alert("Please select a compte");
-        return;
-    }
+    if (select.value == "inwi" || select.value == "maroc-telecom" || select.value == "orange") {
+        if (!select.value) {
+            alert("Please select a compte");
+            return;
+        }
 
-    if (!user_inside.value) {
-        alert("Please select a user");
-        return;
+        if (!user_inside.value) {
+            alert("Please select a user");
+            return;
+        }
     }
-
-    const Reference_value = Number(Reference.value);
-    if (!Reference_value) {
-        alert("Please enter a valid amount");
-        return;
-    }
+        const Reference_value = Number(Reference.value);
+        if (!Reference_value) {
+            alert("Please enter a valid amount");
+            return;
+        }
 
     if (Reference_value > 10000) {
         alert("You can't do more than 10,000 dhs");
