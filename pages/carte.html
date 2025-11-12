@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/carte.css">
     <title>YCD Bank | Cartes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
-    <div class="flex min-h-screen"> 
+    <div class="flex min-h-screen">
 
         <aside id="sidebar"
             class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative min-h-full h-full** transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
-            
+
             <a href="/pages/home.html" class="flex items-center justify-center">
                 <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto">
             </a>
@@ -107,7 +108,7 @@
         </aside>
 
 
-        <div class="flex-1 flex flex-col overflow-hidden"> 
+        <div class="flex-1 flex flex-col overflow-hidden">
 
 
             <header class="bg-white border-b border-gray-200 shadow p-4 flex justify-between items-center z-40">
@@ -157,7 +158,67 @@
             <main class="p-6 flex-1 overflow-y-auto">
 
                 <h1 class="text-2xl font-semibold">Bonjour Mr: Lahmar Zakariae</h1>
+
+                <div class="relative w-full overflow-hidden">
+
+                    <div id="cardSlider"
+                        class="flex gap-10 w-full overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide touch-pan-x md:justify-center py-4">
+
+                        <div id="carte1"
+                            class="min-w-[85vw] max-w-[85vw] sm:min-w-[400px] md:min-w-[500px] md:w-[500px] flex-shrink-0 snap-center grid gap-10 px-0 sm:px-4 md:px-0 py-0 transition-transform duration-500">
+
+                            <div
+                                class="h-full h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
+                                <div class="flex justify-between items-start">
+                                    <p class="text-lg font-light">Compte Chèque</p>
+                                    <span class="text-lg font-semibold tracking-widest"><img class="w-20" src="/images/logoBank.png" alt="logo"></span>
+                                </div>
+
+                                <div class="flex ">
+                                    
+                                    <p class="text-lg tracking-wide ml-2">4643 6844 9845 4749</p>
+                                </div>
+                                <div class="flex mt-6">
+                                    <p class="text-lg font-light"><small>EXPIRE FIN</small></p>
+                                    <p class="text-lg tracking-wide ml-2">03/27</p>
+                                    
+                                </div>
+                                <div class="flex mt-2">
+                                    
+                                    <p class="text-lg tracking-wide ml-2">Mr : Lahmar Zakariae</p>
+                                    
+                                </div>
                 
+
+                                
+                            </div>
+
+                    
+                        </div>
+
+                        <div
+                            class="min-w-[85vw] max-w-[85vw] sm:min-w-[400px] md:min-w-[500px] md:w-[500px] flex-shrink-0 snap-center grid gap-10 px-0 sm:px-4 md:px-0 py-0 transition-transform duration-500">
+
+                            <div
+                                class="w-full h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
+                                <div class="flex justify-between items-start">
+                                    <p class="text-lg font-light">Compte sur Carnet</p>
+                                    <span class="text-lg font-semibold tracking-widest"><img class="w-20" src="/images/logoBank.png" alt="logo">    </span>
+                                </div>
+
+                                <div class="flex mt-6">
+                                    <p class="text-lg font-light">Compte n° :</p>
+                                    <p class="text-lg tracking-wide ml-2">787684684684</p>
+                                </div>
+
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </main>
         </div>
     </div>
