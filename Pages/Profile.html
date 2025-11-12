@@ -12,70 +12,83 @@
 <body>
     <div class="flex h-screen">
         <aside id="sidebar"
-            class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
-            <a href="#" class="flex items-center justify-center">
-                <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto" />
+            class="bg-gray-800 text-white w-64 flex flex-col p-5 fixed md:relative min-h-full h-full** transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
+            
+            <a href="/pages/home.html" class="flex items-center justify-center">
+                <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-32 w-auto">
             </a>
 
             <ul class="flex-1 space-y-6">
                 <li>
                     <a href="/pages/home.html"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5" />
+                        <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5">
                         <span>Accueil</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="/pages/virement.html"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5" />
+                        <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5">
                         <span>Virement</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/Page/Payment.html"
+                    <a href="/pages/payment.html"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5" />
+                        <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5">
                         <span>Payments</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="/pages/convert.html"
                         class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
-                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5" />
+                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5">
                         <span>Currency Converter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/exportRIB.html"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/rib.png" alt="iconConvert" class="w-5 h-5">
+                        <span>Export RIB</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/beneficiaires.html"
+                        class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white transition">
+                        <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5">
+                        <span>Bénéficiaires</span>
                     </a>
                 </li>
             </ul>
 
             <div class="mt-auto relative">
                 <div class="flex items-center gap-3">
+                    <img src="/images/people.png" alt="User" class="w-10 h-10 bg-white rounded-full border-2 ">
                     <div class="relative w-full">
                         <button id="dropdownBtn"
                             class="w-full text-white font-medium flex items-center gap-1 focus:outline-none">
-                            Mehdi Cherkaoui
+                            Lahmar Zakariae
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-[2px]" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
+                                    d="M9 5 l7 7-7 7" />
                             </svg>
                         </button>
 
                         <ul id="dropdownMenu"
                             class="absolute left-0 bottom-full mb-2 w-44 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hidden z-50">
-                            <li>
-                                <a href="#"
+                            <li><a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
                             </li>
-                            <li>
-                                <a href="/Page/Settings.html"
+                            <li><a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Parameter</a>
                             </li>
                             <li>
-                                <hr class="border-gray-200 dark:border-gray-700 my-1" />
+                                <hr class="border-gray-200 dark:border-gray-700 my-1">
                             </li>
-                            <li>
-                                <a href="#"
+                            <li><a href="#"
                                     class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Deconnexion</a>
                             </li>
                         </ul>
@@ -83,6 +96,7 @@
                 </div>
             </div>
         </aside>
+
 
         <div class="flex-1 flex flex-col">
             <header class="bg-white border-b border-gray-200 shadow p-4 flex justify-between items-center">
