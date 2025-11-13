@@ -200,7 +200,7 @@
 
                                 <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
                                     <p>Statut de carte :</p>
-                                    <span class="font-medium text-green-600">Active</span>
+                                    <p id="statutCheque"></p>
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-3">
@@ -257,7 +257,8 @@
 
                                 <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
                                     <p>Statut de carte :</p>
-                                    <span class="font-medium text-green-600">Active</span>
+                                    <p id="statutCarnet"></p>
+                                    
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-3">
@@ -587,12 +588,17 @@
                                 </button>
                             </div>
                             <!-- Modal body -->
-                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+                            <div class=" flex md:p-5 gap-3 justify-center items-center">
 
                                 <button id="bloquerCarteCheque" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
                                         focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
                                         focus:outline-none transition duration-200 ease-in-out" >
                                         Bloquer
+                                </button>
+                                <button id="debloquerCarteCheque" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" >
+                                        Debloquer
                                 </button>
 
                             </div>
@@ -623,12 +629,17 @@
                                 </button>
                             </div>
                             <!-- Modal body -->
-                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+                            <div class=" flex gap-3 md:p-5 justify-center items-center">
 
                                 <button id="bloquerCarteCarnet" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
                                         focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
                                         focus:outline-none transition duration-200 ease-in-out" >
                                         Bloquer
+                                </button>
+                                <button id="debloquerCarteCarnet" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" >
+                                        Debloquer
                                 </button>
 
                             </div>
@@ -722,6 +733,7 @@
             </main>
         </div>
     </div>
+    <script src="/js/gestionCarte.js"></script>
     <script type="module" src="/js/main.js"></script>
 </body>
 
