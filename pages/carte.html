@@ -208,15 +208,17 @@
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
                                         Informations
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-dotation2" data-modal-toggle="default-modal-dotation2"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
                                         Demander dotation
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-bloque"
+                                        data-modal-toggle="default-modal-bloque"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-red-400 hover:bg-gray-100 transition">
                                         Bloquer
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-code"
+                                        data-modal-toggle="default-modal-code"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-yellow-400 hover:bg-gray-100 transition">
                                         Code carte
                                     </button>
@@ -263,15 +265,18 @@
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
                                         Informations
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-dotation"
+                                        data-modal-toggle="default-modal-dotation"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
                                         Demander dotation
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-bloque2"
+                                        data-modal-toggle="default-modal-bloque2"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-red-400 hover:bg-gray-100 transition">
                                         Bloquer
                                     </button>
-                                    <button
+                                    <button data-modal-target="default-modal-code2"
+                                        data-modal-toggle="default-modal-code2"
                                         class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-yellow-400 hover:bg-gray-100 transition">
                                         Code carte
                                     </button>
@@ -461,6 +466,250 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--modal dotation-->
+                <div id="default-modal-dotation" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Demande de Dotation</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-dotation">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+
+                                <div>
+                                    <h3>Le solde disponible est 100000,00 DH</h3>
+                                </div>
+                                <div class="verflow-x-auto ">
+                                    <input id="montantInput" type="number" inputmode="decimal"
+                                        placeholder="Entrez le montant" required class="w-full sm:w-auto md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block px-4 py-2.5 shadow-sm transition duration-150 ease-in-out
+                                        placeholder:text-gray-400" />
+                                </div>
+                                <button type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" aria-label="Valider le montant">
+                                        Valider
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--modal dotation2-->
+                <div id="default-modal-dotation2" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Demande de Dotation</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-dotation2">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+
+                                <div>
+                                    <h3>Le solde disponible est 100000,00 DH</h3>
+                                </div>
+                                <div class="verflow-x-auto ">
+                                    <input id="montantInput" type="number" inputmode="decimal"
+                                        placeholder="Entrez le montant" required class="w-full sm:w-auto md:w-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block px-4 py-2.5 shadow-sm transition duration-150 ease-in-out
+                                        placeholder:text-gray-400" />
+                                </div>
+                                <button type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" aria-label="Valider le montant">
+                                        Valider
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--modal bloquer-->
+                <div id="default-modal-bloque" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Bloquer la carte Cheque</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-bloque">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+
+                                <button id="bloquerCarteCheque" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" >
+                                        Bloquer
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--modal bloquer2-->
+                <div id="default-modal-bloque2" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Bloquer la carte Carnet</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-bloque2">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+
+                                <button id="bloquerCarteCarnet" type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" >
+                                        Bloquer
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--modal Code carte cheque-->
+                <div id="default-modal-code" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Recalcul code carte cheque</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-code">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+                                <div class="w-full sm:w-auto text-black">
+                                    <p>Votre nouveau code carte sera envoye par SMS sur votre telephone mobile. </p>
+                                    <p>Vous devez le changer sur un GAB YCD Bank </p>
+                                </div>
+                                <button type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out">
+                                        Recalculer
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--modal Code carte carnet-->
+                <div id="default-modal-code2" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+                        <div class="relative bg-white rounded-lg shadow-sm ">
+
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                                <h2>Recalcul code carte carnet</h2>
+                                <button type="button"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                    data-modal-hide="default-modal-code2">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class=" flex flex-col md:p-5 space-y-6 justify-center items-center">
+                                <div class="w-full sm:w-auto text-black">
+                                    <p>Votre nouveau code carte sera envoye par SMS sur votre telephone mobile. </p>
+                                    <p>Vous devez le changer sur un GAB YCD Bank </p>
+                                </div>
+                                <button type="button" class="w-full sm:w-auto text-white bg-green-600 hover:bg-green-700
+                                        focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-6 py-2.5 shadow-md
+                                        focus:outline-none transition duration-200 ease-in-out" aria-label="Valider le montant">
+                                        Recalculer
+                                </button>
 
                             </div>
 
