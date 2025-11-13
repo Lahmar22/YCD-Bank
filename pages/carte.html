@@ -160,127 +160,128 @@
 
                 <h1 class="text-2xl font-semibold">Bonjour Mr: Lahmar Zakariae</h1>
 
-                <div class="relative w-full overflow-hidden">
+                <div class="relative w-full overflow-hidden" role="region" aria-label="Liste des cartes bancaires">
 
+                    <!-- Slider container -->
                     <div id="cardSlider"
-                        class="flex gap-10 w-full overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide touch-pan-x md:justify-center py-4">
+                        class="flex gap-10 w-full overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide touch-pan-x md:justify-center py-4 focus:outline-none"
+                        tabindex="0" aria-live="polite">
 
-                        <div id="carte1"
-                            class="min-w-[85vw] max-w-[85vw] sm:min-w-[400px] md:min-w-[500px] md:w-[500px] flex-shrink-0 snap-center grid gap-10 px-0 sm:px-4 md:px-0 py-0 transition-transform duration-500">
+                        <!-- CARD 1 -->
+                        <div class="min-w-[90vw] sm:min-w-[420px] md:min-w-[480px] lg:min-w-[500px] flex-shrink-0 snap-center grid gap-6 px-2 sm:px-4 py-2 md:py-0 transition-transform duration-500 focus-visible:ring-4 focus-visible:ring-blue-500 rounded-2xl"
+                            role="group" aria-label="Carte Compte Chèque">
 
+                            <!-- Carte principale -->
                             <div
-                                class="h-full h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
+                                class="h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden flex flex-col justify-between">
                                 <div class="flex justify-between items-start">
                                     <p class="text-lg font-light">Compte Chèque</p>
-                                    <span class="text-lg font-semibold tracking-widest"><img class="w-20"
-                                            src="/images/logoBank.png" alt="logo"></span>
+                                    <img class="w-20" src="/images/logoBank.png" alt="Logo de la banque" loading="lazy">
                                 </div>
 
-                                <div class="flex ">
+                                <p class="text-lg tracking-wide break-words">4643 6844 9845 4749</p>
 
-                                    <p class="text-lg tracking-wide ">4643 6844 9845 4749</p>
+                                <div class="flex justify-between items-center mt-4">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-sm font-light">Expire fin</p>
+                                        <p class="text-sm tracking-wide">03/27</p>
+                                    </div>
+                                    <p class="text-sm tracking-wide">Mr : Lahmar Zakariae</p>
                                 </div>
-                                <div class="flex mt-6">
-                                    <p class="text-lg font-light"><small>EXPIRE FIN</small></p>
-                                    <p class="text-lg tracking-wide ml-2">03/27</p>
-
-                                </div>
-                                <div class="flex mt-2">
-
-                                    <p class="text-lg tracking-wide">Mr : Lahmar Zakariae</p>
-
-                                </div>
-
-
-
                             </div>
+
+                            <!-- Détails + actions -->
                             <div
-                                class="grid justify-center items-center p-4 md:p-6 gap-4 border border-black rounded-xl">
-                                <div class="flex gap-3 text-black ">
-                                    <p>Numero de compte : </p>
-                                    <span>4643642343453</span>
-                                </div>
-                                <div class="flex gap-3 text-black ">
-                                    <p>Statut de carte : </p>
-                                    <span class="text-right"> Active</span>
+                                class="grid justify-center items-center p-4 md:p-6 gap-4 border border-gray-300 rounded-xl bg-white">
+                                <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
+                                    <p>Numéro de compte :</p>
+                                    <span class="font-medium">4643642343453</span>
                                 </div>
 
-                                <div class="space-y-3 ">
-                                    <div class="flex justify-center items-center">
-                                        <button data-modal-target="default-modal1" data-modal-toggle="default-modal1"
-                                            class="w-40 h-32 border-2 m-2">Informations</button>
-                                        <button class="w-40 h-32 border-2 m-2">Demander une dotation</button>
-                                    </div>
-                                    <div class="flex justify-center items-center">
-                                        <button class="w-40 h-32 border-2 m-2">Bloquer</button>
-                                        <button class="w-40 h-32 border-2 m-2">Code carte</button>
-                                    </div>
+                                <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
+                                    <p>Statut de carte :</p>
+                                    <span class="font-medium text-green-600">Active</span>
                                 </div>
 
-
+                                <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-3">
+                                    <button data-modal-target="default-modal1" data-modal-toggle="default-modal1"
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
+                                        Informations
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
+                                        Demander dotation
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-red-400 hover:bg-gray-100 transition">
+                                        Bloquer
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-yellow-400 hover:bg-gray-100 transition">
+                                        Code carte
+                                    </button>
+                                </div>
                             </div>
-
-
-
                         </div>
 
-                        <div
-                            class="min-w-[85vw] max-w-[85vw] sm:min-w-[400px] md:min-w-[500px] md:w-[500px] flex-shrink-0 snap-center grid gap-10 px-0 sm:px-4 md:px-0 py-0 transition-transform duration-500">
+                        <!-- CARD 2 -->
+                        <div class="min-w-[90vw] sm:min-w-[420px] md:min-w-[480px] lg:min-w-[500px] flex-shrink-0 snap-center grid gap-6 px-2 sm:px-4 py-2 md:py-0 transition-transform duration-500 focus-visible:ring-4 focus-visible:ring-blue-500 rounded-2xl"
+                            role="group" aria-label="Carte Compte sur Carnet">
 
                             <div
-                                class="w-full h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden">
+                                class="h-[220px] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-xl text-white p-5 relative overflow-hidden flex flex-col justify-between">
                                 <div class="flex justify-between items-start">
                                     <p class="text-lg font-light">Compte sur Carnet</p>
-                                    <span class="text-lg font-semibold tracking-widest"><img class="w-20"
-                                            src="/images/logoBank.png" alt="logo"> </span>
+                                    <img class="w-20" src="/images/logoBank.png" alt="Logo de la banque" loading="lazy">
                                 </div>
 
-                                <div class="flex ">
+                                <p class="text-lg tracking-wide break-words">9472 7482 6836 6591</p>
 
-                                    <p class="text-lg tracking-wide ">9472 7482 6836 6591</p>
+                                <div class="flex justify-between items-center mt-4">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-sm font-light">Expire fin</p>
+                                        <p class="text-sm tracking-wide">03/27</p>
+                                    </div>
+                                    <p class="text-sm tracking-wide">Mr : Lahmar Zakariae</p>
                                 </div>
-                                <div class="flex mt-6">
-                                    <p class="text-lg font-light"><small>EXPIRE FIN</small></p>
-                                    <p class="text-lg tracking-wide ml-2">03/27</p>
-
-                                </div>
-                                <div class="flex mt-2">
-
-                                    <p class="text-lg tracking-wide">Mr : Lahmar Zakariae</p>
-
-                                </div>
-
-
                             </div>
+
                             <div
-                                class="grid justify-center items-center p-4 md:p-6 gap-4 border border-black rounded-xl">
-                                <div class="flex gap-3 text-black ">
-                                    <p>Numero de compte : </p>
-                                    <span>787684684684</span>
-                                </div>
-                                <div class="flex gap-3 text-black ">
-                                    <p>Statut de carte : </p>
-                                    <span class="text-right"> Active</span>
+                                class="grid justify-center items-center p-4 md:p-6 gap-4 border border-gray-300 rounded-xl bg-white">
+                                <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
+                                    <p>Numéro de compte :</p>
+                                    <span class="font-medium">787684684684</span>
                                 </div>
 
-                                <div class="space-y-3 ">
-                                    <div class="flex justify-center items-center">
-                                        <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                                            class="w-40 h-32 border-2 m-2">Informations</button>
-                                        <button class="w-40 h-32 border-2 m-2">Demander une dotation</button>
-                                    </div>
-                                    <div class="flex justify-center items-center">
-                                        <button class="w-40 h-32 border-2 m-2">Bloquer</button>
-                                        <button class="w-40 h-32 border-2 m-2">Code carte</button>
-                                    </div>
+                                <div class="flex flex-wrap gap-2 text-gray-900 justify-between">
+                                    <p>Statut de carte :</p>
+                                    <span class="font-medium text-green-600">Active</span>
                                 </div>
 
-
+                                <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-3">
+                                    <button data-modal-target="default-modal" data-modal-toggle="default-modal"
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
+                                        Informations
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition">
+                                        Demander dotation
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-red-400 hover:bg-gray-100 transition">
+                                        Bloquer
+                                    </button>
+                                    <button
+                                        class="border-2 border-gray-400 rounded-xl h-20 text-sm sm:text-base focus:ring-4 focus:ring-yellow-400 hover:bg-gray-100 transition">
+                                        Code carte
+                                    </button>
+                                </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
+
                 <!--modal information1-->
                 <div id="default-modal1" tabindex="-1" aria-hidden="true"
                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
