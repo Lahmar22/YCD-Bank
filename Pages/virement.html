@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YCD Bank | Virement</title>
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100">
+
   <!-- Sidebar -->
   <aside id="sidebar"
     class="bg-gray-800 text-white w-64 flex flex-col p-5 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
@@ -92,19 +94,20 @@
         </div>
 
         <!-- Bénéficiaire -->
-        <div class="flex gap-3">
+        <div class="flex gap-3 relative">
           <div class="flex-1">
             <label class="block text-gray-700 font-medium mb-1">Bénéficiaire</label>
-            <select class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-              <option>Sélectionner un bénéficiaire</option>
+            <select id="beneficiarySelect" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+              <option value="">Sélectionner un bénéficiaire</option>
             </select>
           </div>
-<button type="button" 
-  class="bg-[#1B2F45] text-white text-[15px] h-9 px-1 rounded-md  transition-all duration-200 flex items-center justify-center mt-7">
-  + Nouveau
-</button>
 
-
+          <div class="flex flex-col">
+            <button id="newBenefBtn" data-modal-target="benefModal" data-modal-toggle="benefModal"  type="button" 
+              class="bg-[#1B2F45] text-white text-[15px] h-9 px-1 rounded-md  transition-all duration-200 flex items-center justify-center mt-7">
+              + Nouveau
+            </button>
+          </div>
         </div>
 
         <!-- Montant / Devise / Date -->
@@ -153,11 +156,22 @@
       </form>
     </main>
   </div>
-  <input type="date" id="dateInput" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
 
- <script src="/js/verment.js"></script>
+  <!-- Modal pour nouveau bénéficiaire -->
+  <div id="benefModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl p-6 w-96 relative">
+      <h2 class="text-lg font-semibold mb-4">Ajouter un nouveau bénéficiaire</h2>
+      <input id="modalBenefInput" type="text" placeholder="Nom du bénéficiaire"
+        class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mb-4">
+      <div class="flex justify-end gap-2">
+        <button id="modalCancelBtn" class="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100">Annuler</button>
+        <button id="modalAddBtn" class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">Ajouter</button>
+      </div>
+      <button id="modalCloseBtn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+    </div>
+  </div>
 
+  <script src="/js/verment.js"></script>
 
 </body>
-
 </html>
