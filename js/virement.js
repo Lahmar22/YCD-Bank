@@ -61,8 +61,6 @@ submitBtnVirement.addEventListener("click", () => {
     const option = document.createElement("option");
     option.textContent = `${fullNameVirementSecond} - ${userEnterRibVirementSecond}`;
     beneficiarySelect.appendChild(option);
-
-    localStorage.setItem("userVirement", beneficiarySelect.innerHTML);
     alert("Added successfully");
 });
 
@@ -79,7 +77,7 @@ comptesVirement.addEventListener("change", () => {
         beneficiarySelect.appendChild(option);
     }
     else if (selected === "Compte 1") {
-        const saved = localStorage.getItem("userVirement");x
+        const saved = localStorage.getItem("userVirement");
 
         if (saved) {
             beneficiarySelect.innerHTML = saved;
