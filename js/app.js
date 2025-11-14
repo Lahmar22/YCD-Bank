@@ -12,7 +12,7 @@ LoginSubmit.addEventListener("click", ()=> {
         console.log("Checking:", users[i]);
 
         
-        if (users[i].transfer == UserId) {
+        if (users[i].transfer_1 == UserId) {
 
             
             if (users[i].motdepasse !== passwordLogin) {
