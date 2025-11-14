@@ -1,3 +1,4 @@
+// ELEMENTS
 const beneficiarySelect = document.getElementById("beneficiarySelect");
 const newBenefBtn = document.getElementById("newBenefBtn");
 const popupVirement = document.getElementById("popupVirement");
@@ -6,149 +7,159 @@ const comptesVirement = document.getElementById("comptesVirement");
 const submitBtnVirement = document.getElementById("submitBtnVirement");
 
 const montantVirement = document.getElementById("montantVirement");
-const currency = document.querySelector('select');
 const dateVirement = document.getElementById("dateVirement");
 const montifReferenceVirement = document.getElementById("montifReferenceVirement");
 const validerBtnVerment = document.getElementById("validerBtnVerment");
 
-let userEnterRibVirement = 0;
 
-
-
+// ------------------ DATE AUTO ------------------
 window.addEventListener("load", () => {
-
     const today = new Date().toISOString().split("T")[0];
     dateVirement.value = today;
 });
 
-newBenefBtn.addEventListener("click", () => {
-    popupVirement.classList.remove("hidden");
-});
+// ------------------ POPUP ADD BENEF ------------------
+newBenefBtn.addEventListener("click", () => popupVirement.classList.remove("hidden"));
+exitPopupVirement.addEventListener("click", () => popupVirement.classList.add("hidden"));
 
 
-exitPopupVirement.addEventListener("click", () => {
-    popupVirement.classList.add("hidden");
-});
-
-
-
-
+// ------------------ AJOUT BENEF ------------------
 submitBtnVirement.addEventListener("click", () => {
     const fullNameVirementSecond = document.getElementById("fullNameVirement").value.trim();
     const userEnterRibVirementSecond = document.getElementById("userEnterRibVirement").value.trim();
-    if (!fullNameVirementSecond) {
-        alert("Please enter the user name");
-        return;
-    }
 
-    if (!userEnterRibVirementSecond) {
-        alert("Please enter their RIB");
-        return;
-    }
-    if (userEnterRibVirementSecond.length !== 6 && userEnterRibVirementSecond.length !== 24) {
-        alert("This RIB is invalid");
-        return;
-    }
+    if (!fullNameVirementSecond) return alert("Please enter the user name");
+    if (!userEnterRibVirementSecond) return alert("Please enter their RIB");
+    if (userEnterRibVirementSecond.length !== 6 && userEnterRibVirementSecond.length !== 24)
+        return alert("This RIB is invalid");
 
-
-    let userEnterRibVirement = { fullNameVirementSecond, userEnterRibVirementSecond };
     const saved = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
-    saved.push(userEnterRibVirement);
+    saved.push({ fullNameVirementSecond, userEnterRibVirementSecond });
     localStorage.setItem("RIBSVirement", JSON.stringify(saved));
-
-
 
     const option = document.createElement("option");
     option.textContent = `${fullNameVirementSecond} - ${userEnterRibVirementSecond}`;
     beneficiarySelect.appendChild(option);
+
     alert("Added successfully");
 });
 
 
+// ------------------ CHOIX COMPTE -> LISTE BENEF ------------------
 comptesVirement.addEventListener("change", () => {
     const selected = comptesVirement.value;
     beneficiarySelect.innerHTML = "";
 
     if (selected === "Compte 2") {
+        // ONLY display Compte 1
+        const opt = document.createElement("option");
+        opt.value = "Compte 1";
+        opt.textContent = "Compte 1";
+        beneficiarySelect.appendChild(opt);
 
-        const option = document.createElement("option");
-        option.value = "Compte 1";
-        option.textContent = "Compte 1";
-        beneficiarySelect.appendChild(option);
-    }
-    else if (selected === "Compte 1") {
-        const saved = localStorage.getItem("userVirement");
+    } else if (selected === "Compte 1") {
 
-        if (saved) {
-            beneficiarySelect.innerHTML = saved;
-        }
-    }
-    else {
+        // Add Compte 2
+        const optC2 = document.createElement("option");
+        optC2.value = "Compte 2";
+        optC2.textContent = "Compte 2";
+        beneficiarySelect.appendChild(optC2);
+
+        // Add external beneficiers
+        const saved = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
+        saved.forEach(item => {
+            const option = document.createElement("option");
+            option.value = `${item.fullNameVirementSecond}|${item.userEnterRibVirementSecond}`;
+            option.textContent = `${item.fullNameVirementSecond} (${item.userEnterRibVirementSecond})`;
+            beneficiarySelect.appendChild(option);
+        });
+
+    } else {
         beneficiarySelect.innerHTML = `<option value="">Sélectionner un bénéficiaire</option>`;
     }
-
-
 });
 
+
+
+const soldeUser = JSON.parse(localStorage.getItem("loggedUser")) || { solde1: 0, solde2: 0 };
 
 
 validerBtnVerment.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (!montifReferenceVirement.value.trim()) {
-        alert("Please enter the motif / reference");
-        return;
+    const source = comptesVirement.value;
+    const montant = parseFloat(montantVirement.value) || 0;
+    const beneficiary = beneficiarySelect.value;
+    const ribList = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
+
+    if (!source) return alert("Select source account");
+    if (!beneficiary) return alert("Select beneficiary");
+    if (montant <= 0) return alert("Enter a valid amount");
+    if (!montifReferenceVirement.value.trim()) return alert("Enter a reference");
+
+    let frais = 0;
+    let type = "interne";
+    let destination = beneficiary;
+
+    // External?
+    const external = ribList.find(u => beneficiary.includes(u.fullNameVirementSecond));
+
+    if (external) {
+        type = "externe";
+        destination = external.fullNameVirementSecond;
+
+        if (external.userEnterRibVirementSecond.length === 24) {
+            frais = 20; // frais externe
+        }
     }
 
-    if (parseFloat(montantVirement.value) > 10000) {
-        alert("You can't do more than 10000dh");
-        return;
+    const montantFinal = montant + frais;
+
+    // CHECK SOLDE
+    if (source === "Compte 1" && soldeUser.solde1 < montantFinal)
+        return alert("Insufficient balance in Compte 1");
+
+    if (source === "Compte 2" && soldeUser.solde2 < montantFinal)
+        return alert("Insufficient balance in Compte 2");
+
+
+    // ------------------ VIREMENT INTERNE ------------------
+    if (type === "interne") {
+        if (source === "Compte 1" && beneficiary === "Compte 2") {
+            soldeUser.solde1 -= montantFinal;
+            soldeUser.solde2 += montant;
+        }
+
+        if (source === "Compte 2" && beneficiary === "Compte 1") {
+            soldeUser.solde2 -= montantFinal;
+            soldeUser.solde1 += montant;
+        }
     }
 
-
-    const selectedText = beneficiarySelect.value || beneficiarySelect.options[beneficiarySelect.selectedIndex].text;
-    if (!selectedText || selectedText === "Sélectionner un bénéficiaire") {
-        alert("Please select a beneficiary");
-        return;
+    // ------------------ VIREMENT EXTERNE ------------------
+    if (type === "externe") {
+        if (source === "Compte 1") soldeUser.solde1 -= montantFinal;
+        if (source === "Compte 2") soldeUser.solde2 -= montantFinal;
     }
 
+    localStorage.setItem("loggedUser", JSON.stringify(soldeUser));
 
-    const UserRibs = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
-    const selectedUser = UserRibs.find(user => selectedText.includes(user.fullNameVirementSecond));
-    if (!selectedUser) {
-        alert("Beneficiary not found");
-        return;
-    }
-
-
-    const ribLength = selectedUser.userEnterRibVirementSecond.length;
-    if (ribLength !== 6 && ribLength !== 24) {
-        alert("This RIB is invalid");
-        return;
-    }
-
-    let montantFinal = parseFloat(montantVirement.value) || 0;
-    if (ribLength === 24) {
-        montantFinal += 20;
-    }
-
-
+    // ------------------ SAVE TRANSACTION ------------------
     const transaction = {
-        utilisateur: selectedUser.fullNameVirementSecond,
-        rib: selectedUser.userEnterRibVirementSecond,
-        montant: montantFinal,
-        compte: currency.value,
+        from: source,
+        to: destination,
+        montant: montant,
+        frais: frais,
+        type: type,
         date: dateVirement.value,
         description: montifReferenceVirement.value
     };
 
-
-    const savedTransactions = JSON.parse(localStorage.getItem("transactions")) || [];
+    const savedTransactions = JSON.parse(localStorage.getItem("transaction")) || [];
     savedTransactions.push(transaction);
-    localStorage.setItem("transactions", JSON.stringify(savedTransactions));
+    localStorage.setItem("transaction", JSON.stringify(savedTransactions));
 
-    alert("Transaction saved!");
-
+    alert("Virement effectué avec succès !");
 
     montantVirement.value = "";
     montifReferenceVirement.value = "";
