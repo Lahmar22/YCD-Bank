@@ -1,177 +1,242 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YCD Bank | Virement</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>YCD Bank | Virement</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
 </head>
 
 <body class="bg-gray-100">
 
-  <!-- Sidebar -->
-  <aside id="sidebar"
-    class="bg-gray-800 text-white w-64 flex flex-col p-5 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
-    <a href="#" class="flex items-center justify-center mb-10">
-      <img src="/images/logoBank.png" alt="YCD Bank logo" class="h-24 w-auto" />
-    </a>
+	<!-- Sidebar -->
+	<aside id="sidebar"
+		class="bg-gray-800 text-white w-64 flex flex-col p-5 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
+		<a href="#" class="flex items-center justify-center mb-10">
+			<img src="/images/logoBank.png" alt="YCD Bank logo" class="h-24 w-auto" />
+		</a>
 
-    <ul class="flex-1 space-y-4">
-      <li>
-        <a href="/pages/home.html"
-          class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
-          <img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5" />
-          <span>Accueil</span>
-        </a>
-      </li>
-      <li>
-        <a href="#"
-          class="flex items-center gap-3 p-2 rounded-lg bg-gray-700 text-white transition">
-          <img src="/images/virement.png" alt="iconVirement" class="w-5 h-5" />
-          <span>Virement</span>
-        </a>
-      </li>
-      <li>
-        <a href="/Page/Payment.html"
-          class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
-          <img src="/images/payment.png" alt="iconPayment" class="w-5 h-5" />
-          <span>Payments</span>
-        </a>
-      </li>
-      <li>
-        <a href="#"
-          class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
-          <img src="/images/convert.png" alt="iconConvert" class="w-5 h-5" />
-          <span>Currency Converter</span>
-        </a>
-      </li>
-    </ul>
+		<ul class="flex-1 space-y-4">
+			<li>
+				<a href="/pages/home.html"
+					class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
+					<img src="/images/accueil.png" alt="iconAccueil" class="w-5 h-5" />
+					<span>Accueil</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="flex items-center gap-3 p-2 rounded-lg bg-gray-700 text-white transition">
+					<img src="/images/virement.png" alt="iconVirement" class="w-5 h-5" />
+					<span>Virement</span>
+				</a>
+			</li>
+			<li>
+				<a href="/Page/Payment.html"
+					class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
+					<img src="/images/payment.png" alt="iconPayment" class="w-5 h-5" />
+					<span>Payments</span>
+				</a>
+			</li>
+			<li>
+				<a href="#"
+					class="flex items-center gap-3 p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition">
+					<img src="/images/convert.png" alt="iconConvert" class="w-5 h-5" />
+					<span>Currency Converter</span>
+				</a>
+			</li>
+		</ul>
 
-    <div class="mt-auto relative">
-      <button id="dropdownBtn"
-        class="w-full text-left text-white font-medium flex items-center justify-between p-2 rounded hover:bg-gray-700">
-        Mehdi Cherkaoui
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+		<div class="mt-auto relative">
+			<button id="dropdownBtn"
+				class="w-full text-left text-white font-medium flex items-center justify-between p-2 rounded hover:bg-gray-700">
+				Mehdi Cherkaoui
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+					stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+				</svg>
+			</button>
 
-      <ul id="dropdownMenu"
-        class="absolute left-0 bottom-full mb-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg hidden z-50">
-        <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a></li>
-        <li><a href="/Page/Settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paramètres</a></li>
-        <li><hr class="border-gray-200 my-1" /></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Déconnexion</a></li>
-      </ul>
-    </div>
-  </aside>
+			<ul id="dropdownMenu"
+				class="absolute left-0 bottom-full mb-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg hidden z-50">
+				<li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a></li>
+				<li><a href="/Page/Settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paramètres</a>
+				</li>
+				<li>
+					<hr class="border-gray-200 my-1" />
+				</li>
+				<li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Déconnexion</a></li>
+			</ul>
+		</div>
+	</aside>
 
-  <!-- Main content -->
-  <div class="flex flex-col min-h-screen md:ml-64 transition-all duration-300">
-    <!-- Header -->
-    <header class="bg-white border-b border-gray-300 shadow-sm p-4 flex justify-between items-center sticky top-0 z-40">
-      <button id="sidebarToggle" class="md:hidden focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <h1 class="text-xl font-semibold text-gray-800">Faire un virement</h1>
-    </header>
+	<!-- Main content -->
+	<div class="flex flex-col min-h-screen md:ml-64 transition-all duration-300">
+		<!-- Header -->
+		<header
+			class="bg-white border-b border-gray-300 shadow-sm p-4 flex justify-between items-center sticky top-0 z-40">
+			<button id="sidebarToggle" class="md:hidden focus:outline-none">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+					stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+			<h1 class="text-xl font-semibold text-gray-800">Faire un virement</h1>
+		</header>
 
-    <!-- Form Section -->
-    <main class="flex justify-center items-center flex-1 p-6">
-      <form class="bg-white w-full max-w-xl p-8 rounded-2xl border border-gray-200 shadow-md flex flex-col gap-6">
-        <!-- Compte source -->
-        <div>
-          <label class="block text-gray-700 font-medium mb-1">Compte source</label>
-          <select class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-            <option>Choisir le compte</option>
-            <option>Compte 1</option>
-            <option>Compte 2</option>
-          </select>
-        </div>
+		<!-- Form Section -->
+		<main class="flex justify-center items-center flex-1 p-6">
+			<form class="bg-white w-full max-w-xl p-8 rounded-2xl border border-gray-200 shadow-md flex flex-col gap-6">
+				<!-- Compte source -->
+				<div>
+					<label class="block text-gray-700 font-medium mb-1">Compte source</label>
+					<select id="comptesVirement"
+						class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+						<option>Choisir le compte</option>
+						<option>Compte 1</option>
+						<option>Compte 2</option>
+					</select>
+				</div>
 
-        <!-- Bénéficiaire -->
-        <div class="flex gap-3 relative">
-          <div class="flex-1">
-            <label class="block text-gray-700 font-medium mb-1">Bénéficiaire</label>
-            <select id="beneficiarySelect" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-              <option value="">Sélectionner un bénéficiaire</option>
-            </select>
-          </div>
+				<!-- Bénéficiaire -->
+				<div class="flex gap-3 relative">
+					<div class="flex-1">
+						<label class="block text-gray-700 font-medium mb-1">Bénéficiaire</label>
+						<select id="beneficiarySelect"
+							class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+							<option value="">Sélectionner un bénéficiaire</option>
+						</select>
+					</div>
 
-          <div class="flex flex-col">
-            <button id="newBenefBtn" data-modal-target="benefModal" data-modal-target="benefModal"  type="button" 
-              class="bg-[#1B2F45] text-white text-[15px] h-9 px-1 rounded-md  transition-all duration-200 flex items-center justify-center mt-7">
-              + Nouveau
-            </button>
-          </div>
-        </div>
+					<div class="flex flex-col">
+						<button id="newBenefBtn" data-modal-target="benefModal" data-modal-target="benefModal"
+							type="button"
+							class="bg-[#1B2F45] text-white text-[15px] h-9 px-1 rounded-md  transition-all duration-200 flex items-center justify-center mt-7">
+							+ Nouveau
+						</button>
+					</div>
+				</div>
 
-        <!-- Montant / Devise / Date -->
-        <div class="grid grid-cols-3 gap-3">
-          <div>
-            <label class="block text-gray-700 font-medium mb-1">Montant</label>
-            <input type="number" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-gray-700 font-medium mb-1">Devise</label>
-            <select class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-              <option>MAD</option>
-              <option>USD</option>
-              <option>EUR</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-gray-700 font-medium mb-1">Date</label>
-            <input type="date" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-          </div>
-        </div>
+				<!-- Montant / Devise / Date -->
+				<div class="grid grid-cols-3 gap-3">
+					<div>
+						<label class="block text-gray-700 font-medium mb-1">Montant</label>
+						<input type="number"
+							class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+					</div>
+					<div>
+						<label class="block text-gray-700 font-medium mb-1">Devise</label>
+						<select
+							class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+							<option>MAD</option>
+							<option>USD</option>
+							<option>EUR</option>
+						</select>
+					</div>
+					<div>
+						<label class="block text-gray-700 font-medium mb-1">Date</label>
+						<input type="date"
+							class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+					</div>
+				</div>
 
-        <!-- Motif / Référence -->
-        <div>
-          <label class="block text-gray-700 font-medium mb-1">Motif / Référence</label>
-          <input type="text" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        </div>
+				<!-- Motif / Référence -->
+				<div>
+					<label class="block text-gray-700 font-medium mb-1">Motif / Référence</label>
+					<input type="text"
+						class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+				</div>
 
-        <!-- Type -->
-        <div class="flex items-center gap-6">
-          <label class="flex items-center gap-2">
-            <input type="radio" name="type" class="accent-[#1B2F45]" checked>
-            Immédiat
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="type" class="accent-[#1B2F45]">
-            Planifié
-          </label>
-        </div>
+				<!-- Type -->
+				<div class="flex items-center gap-6">
+					<label class="flex items-center gap-2">
+						<input type="radio" name="type" class="accent-[#1B2F45]" checked>
+						Immédiat
+					</label>
+					<label class="flex items-center gap-2">
+						<input type="radio" name="type" class="accent-[#1B2F45]">
+						Planifié
+					</label>
+				</div>
 
-        <p class="text-gray-500 text-sm">Plafond : 10 000 MAD / jour</p>
+				<p class="text-gray-500 text-sm">Plafond : 10 000 MAD / jour</p>
 
-        <button type="submit" class="bg-[#1B2F45] text-white py-2 rounded-xl  transition">
-          Valider
-        </button>
-      </form>
-    </main>
-  </div>
+				<button type="submit" class="bg-[#1B2F45] text-white py-2 rounded-xl  transition">
+					Valider
+				</button>
+			</form>
+		</main>
+	</div>
 
-  <!-- Modal pour nouveau bénéficiaire -->
-  <div id="benefModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-2xl p-6 w-96 relative">
-      <h2 class="text-lg font-semibold mb-4">Ajouter un nouveau bénéficiaire</h2>
-      <input id="modalBenefInput" type="text" placeholder="Nom du bénéficiaire"
-        class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mb-4">
-      <div class="flex justify-end gap-2">
-        <button id="modalCancelBtn" class="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100">Annuler</button>
-        <button id="modalAddBtn" class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">Ajouter</button>
-      </div>
-      <button id="modalCloseBtn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-    </div>
-  </div>
 
-  <script src="/js/verment.js"></script>
+
+
+
+
+
+
+
+
+
+	<!-- Modal pour nouveau bénéficiaire -->
+	<div id="benefModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+		<div class="bg-white rounded-2xl p-6 w-96 relative">
+			<h2 class="text-lg font-semibold mb-4">Ajouter un nouveau bénéficiaire</h2>
+			<input id="modalBenefInput" type="text" placeholder="Nom du bénéficiaire"
+				class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none mb-4">
+			<div class="flex justify-end gap-2">
+				<button id="modalCancelBtn"
+					class="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100">Annuler</button>
+				<button id="modalAddBtn"
+					class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">Ajouter</button>
+			</div>
+			<button id="modalCloseBtn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+		</div>
+	</div>
+
+
+
+	<div id="popupVirement" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+		<div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative">
+
+			<div class="flex justify-between items-center border-b border-gray-200 pb-3 mb-4">
+				<h2 class="text-xl font-semibold text-gray-800">Ajouter un utilisateur</h2>
+				<button id="exitPopupVirement"
+					class="text-gray-500 hover:text-red-600 text-2xl font-bold leading-none">&times;</button>
+			</div>
+
+
+			<form id="popupVirementForm" class="space-y-5">
+
+				<div>
+					<label for="fullNameVirement" class="block text-gray-700 font-medium mb-1">Nom complet</label>
+					<input type="text" id="fullNameVirement" placeholder="Entrez le nom complet"
+						class="w-full border border-gray-300 rounded-xl px-4 py-2 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+				</div>
+
+
+				<div>
+					<label for="userEnterRibVirement" class="block text-gray-700 font-medium mb-1">
+						RIB / Transaction <span class="text-red-600">(YCD Bank uniquement)</span>
+					</label>
+					<input type="number" id="userEnterRibVirement" placeholder="Entrez le RIB"
+						class="w-full border border-gray-300 rounded-xl px-4 py-2 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-red-500 focus:outline-none">
+				</div>
+
+
+				<div class="flex justify-end gap-3 pt-2 border-t border-gray-200 mt-6">
+					<button type="submit" id="submitBtnVirement"
+						class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">Ajouter</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<script src="/js/virement.js"></script>
 
 </body>
+
 </html>
