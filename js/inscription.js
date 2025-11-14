@@ -98,7 +98,9 @@ document.getElementById("confirm-btn").addEventListener("click", function () {
         naissance,
         age: calculateAge(naissance),
         adress,
-        motdepasse
+        motdepasse,
+        solde1 : 10000,
+        solde2 : 10000
     };
 
 

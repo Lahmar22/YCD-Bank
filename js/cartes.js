@@ -1,3 +1,5 @@
+const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
 export function visibleMoney() {
     const toggleBtn = document.getElementById('btnVisible');
     const money1 = document.getElementById('money1');
@@ -5,7 +7,7 @@ export function visibleMoney() {
 
     toggleBtn.addEventListener('click', () => {
         isHidden = !isHidden;
-        money1.textContent = isHidden ? '****' : '10000 MAD';
+        money1.textContent = isHidden ? '****' : `${loggedUser.solde1} MAD`;
     });
 }
 export function visibleMoney2() {
@@ -15,7 +17,7 @@ export function visibleMoney2() {
 
     toggleBtn2.addEventListener('click', () => {
         isHidden2 = !isHidden2;
-        money2.textContent = isHidden2 ? '****' : '10000 MAD';
+        money2.textContent = isHidden2 ? '****' : `${loggedUser.solde2} MAD`;
     });
 }
 
