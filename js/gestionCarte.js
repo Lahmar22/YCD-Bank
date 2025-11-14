@@ -1,74 +1,137 @@
-let statutsChq = "Active"; 
-let statutsCrt = "Active";
+const nomCartes1 = document.getElementById("nomCartes1");
 
-function statut() {
-    const statutCarnet = document.getElementById('statutCarnet');
-    const btnBloqueCarnet = document.getElementById('bloquerCarteCarnet');
-    const btnDeBloqueCarnet = document.getElementById('debloquerCarteCarnet');
-    
+const nomCartes2 = document.getElementById("nomCartes2");
 
-    btnBloqueCarnet.addEventListener('click', () => {  
-        statutsCrt = "Bloquer"
-        localStorage.setItem("statutcrt", statutsCrt);
-        statutCarnet.innerHTML = `<span class="font-medium text-red-600">${statutsCrt}</span>`
-    })
+const bloquerCarteCheque = document.getElementById("bloquerCarteCheque");
 
-    btnDeBloqueCarnet.addEventListener('click', () => {
-        statutsCrt = "Active"
-        localStorage.setItem("statutcrt", statutsCrt);
-        
-        statutCarnet.innerHTML = `<span class="font-medium text-green-600">${statutsCrt}</span>`
-    })
-    
+const debloquerCarteCheque = document.getElementById("debloquerCarteCheque");
 
-    const st = localStorage.getItem('statutcrt');
+const btnBloqueCarnet = document.getElementById('bloquerCarteCarnet');
 
-    let color1 = "";
-    if (st == "Active") {
-        color1 = "text-green-600";
-    } else {
-        color1 = "text-red-600";
-    }
+const btnDeBloqueCarnet = document.getElementById('debloquerCarteCarnet');
 
-    statutCarnet.innerHTML = `<span class="font-medium ${color1}">${st}</span>`
+const statutCheque = document.getElementById("statutCheque");
 
-}
+const statutCarnet = document.getElementById("statutCarnet");
 
+bloquerCarteCheque.addEventListener("click", () => {
+	statutCheque.textContent = "Bloqué";
 
-function statut2() {
+	statutCheque.classList.add("text-red-600");
 
-    const statutCheque = document.getElementById('statutCheque');
-    const bloquerCarteCheque = document.getElementById('bloquerCarteCheque');
-    const btnDeBloqueCheque = document.getElementById('debloquerCarteCheque');
+	statutCheque.classList.remove("text-green-600")
 
-    
+	const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    bloquerCarteCheque.addEventListener('click', () => {
-        statutsChq = "Bloquer"
-        localStorage.setItem("statutsChq", statutsChq);
-        statutCheque.innerHTML = `<span class="font-medium text-red-600">${statutsChq}</span>`
-    })
+	const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) || {};
 
-    btnDeBloqueCheque.addEventListener('click', () => {
-        statutsChq = "Active"
-        localStorage.setItem("statutsChq", statutsChq);
-        
-        statutCheque.innerHTML = `<span class="font-medium text-green-600">${statutsChq}</span>`
-    })
+	const currentUser = users.find(u => u.transfer_1 === loggedUser.transfer_1);
 
+	if (!currentUser) return;
 
-    const st2 = localStorage.getItem('statutsChq');
-    
-    let color = "";
-    if (st2 == "Active") {
-        color = "text-green-600";
-    } else {
-        color = "text-red-600";
-    }
-   
+	currentUser.statusChèque = "Bloqué";
 
-    statutCheque.innerHTML = `<span class="font-medium ${color}">${st2}</span>`
-}
+	localStorage.setItem("users", JSON.stringify(users));
+})
+debloquerCarteCheque.addEventListener("click", () => {
+	statutCheque.textContent = "Active";
 
-statut2();
-statut();
+	statutCheque.classList.remove("text-red-600");
+
+	statutCheque.classList.add("text-green-600")
+
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+
+	const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+	const currentUser = users.find(u => u.transfer_1 === loggedUser.transfer_1);
+
+	if (!currentUser) return;
+
+	currentUser.statusChèque = "Active";
+
+	localStorage.setItem("users", JSON.stringify(users));
+})
+btnBloqueCarnet.addEventListener("click", () => {
+	statutCarnet.textContent = "Bloqué";
+
+	statutCarnet.classList.add("text-red-600");
+
+	statutCarnet.classList.remove("text-green-600")
+
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+
+	const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+	const currentUser = users.find(u => u.transfer_1 === loggedUser.transfer_1);
+
+	if (!currentUser) return;
+
+	currentUser.statusCarnet = "Bloqué";
+
+	localStorage.setItem("users", JSON.stringify(users));
+});
+btnDeBloqueCarnet.addEventListener("click", () => {
+	statutCarnet.textContent = "Active";
+
+	statutCarnet.classList.remove("text-red-600");
+
+	statutCarnet.classList.add("text-green-600")
+
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+
+	const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+	const currentUser = users.find(u => u.transfer_1 === loggedUser.transfer_1);
+
+	if (!currentUser) return;
+
+	currentUser.statusCarnet = "Active";
+
+	localStorage.setItem("users", JSON.stringify(users));
+});
+window.addEventListener("DOMContentLoaded", () => {
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+
+	const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+	const currentUser = users.find(u => u.transfer_1 === loggedUser.transfer_1);
+
+	if (!currentUser) return;
+
+	nomCartes1.textContent = currentUser.nom + " " + currentUser.prenom;
+
+	nomCartes2.textContent = currentUser.nom + " " + currentUser.prenom;
+
+	if (currentUser.statusChèque === "Active") {
+		statutCheque.textContent = currentUser.statusChèque;
+
+		statutCheque.classList.remove("text-red-600");
+
+		statutCheque.classList.add("text-green-600")
+	}
+
+	else if (currentUser.statusChèque === "Bloqué") {
+		statutCheque.textContent = currentUser.statusChèque;
+
+		statutCheque.classList.add("text-red-600");
+
+		statutCheque.classList.remove("text-green-600")
+	}
+
+	if (currentUser.statusCarnet === "Active") {
+		statutCarnet.textContent = currentUser.statusCarnet;
+
+		statutCarnet.classList.remove("text-red-600");
+
+		statutCarnet.classList.add("text-green-600")
+	}
+
+	else if (currentUser.statusCarnet === "Bloqué") {
+		statutCarnet.textContent = currentUser.statusCarnet;
+
+		statutCarnet.classList.add("text-red-600");
+
+		statutCarnet.classList.remove("text-green-600")
+	}
+})
