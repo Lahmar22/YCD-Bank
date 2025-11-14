@@ -192,15 +192,14 @@
                             <!-- body modal -->
                             <div class="p-4 md:p-5 space-y-4">
 
-
                                 <label for="first_name"
                                     class="block mb-2 text-sm font-medium text-gray-900 ">Nom</label>
-                                <input type="text" id="first_name"
+                                <input type="text" id="editNom"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="Entrez Nom Complete" required />
 
                                 <label for="RIB" class="block mb-2 text-sm font-medium text-gray-900 ">RIB</label>
-                                <input type="number" id="first_name"
+                                <input type="number" id="editRib"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="Entrez RIB " required />
 
@@ -208,7 +207,8 @@
                             <!-- footer Modal -->
                             <div
                                 class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                                <button data-modal-hide="default-modal" type="button"
+                                <button data-modal-hide="default-modal" type="button" 
+                                    onclick="confirmerModification()"
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
                                     Confirme</button>
                                 <button data-modal-hide="default-modal" type="button"

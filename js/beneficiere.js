@@ -1,4 +1,3 @@
-const saved = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
 const listeBeneficier = document.getElementById('listeBeneficier');
 
 function afficherBeneficiaires() {
@@ -29,13 +28,18 @@ function afficherBeneficiaires() {
                 <button 
                     data-modal-target="default-modal" 
                     data-modal-toggle="default-modal" 
-                    class="block w-full sm:w-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" 
-                    type="button">
+                    class="block w-full sm:w-auto text-white bg-blue-700 hover:bg-blue-800 
+                           focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg 
+                           text-sm px-5 py-2.5 text-center" 
+                    type="button"
+                    onclick="ouvrirModalModifier('${d.fullNameVirementSecond}')">
                     Modifier
                 </button>
 
                 <button 
-                    class="block w-full sm:w-auto text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" 
+                    class="block w-full sm:w-auto text-white bg-red-700 hover:bg-red-800 
+                           focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg 
+                           text-sm px-5 py-2.5 text-center" 
                     type="button"
                     onclick="supprimer('${d.fullNameVirementSecond}')">
                     Supprimer
@@ -57,7 +61,43 @@ function supprimer(nom) {
     afficherBeneficiaires();
 }
 
+let nomActuel = ""; 
+
+function ouvrirModalModifier(nom) {
+    const data = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
+
+    const user = data.find(b => b.fullNameVirementSecond === nom);
+
+    if (!user) return;
+
+    nomActuel = nom; // mémorise l'ancien nom
+
+    // remplit les inputs du modal
+    document.getElementById("editNom").value = user.fullNameVirementSecond;
+    document.getElementById("editRib").value = user.userEnterRibVirementSecond;
+}
+
+function confirmerModification() {
+    let data = JSON.parse(localStorage.getItem("RIBSVirement")) || [];
+
+    const newNom = document.getElementById("editNom").value.trim();
+    const newRib = document.getElementById("editRib").value.trim();
+
+    // mise à jour de l'objet
+    data = data.map(b => {
+        if (b.fullNameVirementSecond === nomActuel) {
+            return {
+                ...b,
+                fullNameVirementSecond: newNom,
+                userEnterRibVirementSecond: newRib
+            };
+        }
+        return b;
+    });
+
+    localStorage.setItem("RIBSVirement", JSON.stringify(data));
+
+    afficherBeneficiaires();
+}
+
 afficherBeneficiaires();
-
-
-
